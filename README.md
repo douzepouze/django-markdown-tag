@@ -1,6 +1,6 @@
 A small Django app that provides template tags for using
 [Markdown](http://daringfireball.net/projects/markdown/) using the
-[python-markdown2](https://github.com/trentm/python-markdown2) library.
+python-markdown library.
 
 # What's with the "deux" in the name?
 
