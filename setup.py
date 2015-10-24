@@ -26,7 +26,7 @@ setup(name='django-markdown-tag',
         Programming Language :: Python :: 2
         Topic :: Internet :: WWW/HTTP
         """.split('\n') if c.strip()],
-    keywords='django markdown markdown2 text markup html',
+    keywords='django markdown text markup html',
     author='Trent Mick, Steffen Görtz',
     author_email='trentm@gmail.com, steffen@steffen-goertz.de',
     maintainer='Steffen Görtz',
