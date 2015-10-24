@@ -4,19 +4,17 @@ import sys
 import os
 from setuptools import setup, find_packages
 
-
-
 _top_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(_top_dir, "lib"))
 try:
-    import markdown_deux
+    import markdown_tag
 finally:
     del sys.path[0]
 README = open(os.path.join(_top_dir, 'README.md')).read()
 
-setup(name='django-markdown-deux',
-    version=markdown_deux.__version__,
-    description="a Django app that provides template tags for using Markdown (using the python-markdown2 processor)",
+setup(name='django-markdown-tag',
+    version=markdown_tag.__version__,
+    description="a Django app that provides template tags for using Markdown (using the python-markdown processor)",
     long_description=README,
     classifiers=[c.strip() for c in """
         Development Status :: 5 - Production/Stable
@@ -29,14 +27,14 @@ setup(name='django-markdown-deux',
         Topic :: Internet :: WWW/HTTP
         """.split('\n') if c.strip()],
     keywords='django markdown markdown2 text markup html',
-    author='Trent Mick',
-    author_email='trentm@gmail.com',
-    maintainer='Trent Mick',
-    maintainer_email='trentm@gmail.com',
-    url='http://github.com/trentm/django-markdown-deux',
+    author='Trent Mick, Steffen Görtz',
+    author_email='trentm@gmail.com, steffen@steffen-goertz.de',
+    maintainer='Steffen Görtz',
+    maintainer_email='steffen@steffen-goertz.de',
+    url='http://github.com/douzepouze/django-markdown-tag',
     license='MIT',
-    install_requires = ['markdown2'],
-    packages=["markdown_deux"],
+    install_requires = ['markdown'],
+    packages=["markdown_tag"],
     package_dir={"": "lib"},
     include_package_data=True,
     zip_safe=False,
