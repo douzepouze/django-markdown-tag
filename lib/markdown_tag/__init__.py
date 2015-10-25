@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # Copyright (c) 2008-2010 ActiveState Corp.
 # Copyright (c) 2015 Steffen Görtz
 # License: MIT (http://www.opensource.org/licenses/mit-license.php)
@@ -8,22 +9,17 @@ python-markdown library.
 
 See <http://github.com/douzepouze/django-markdown-tag> for more info.
 """
+from markdown_tag.conf import settings
 
 __version_info__ = (1, 0, 0)
 __version__ = '.'.join(map(str, __version_info__))
 __author__ = "Steffen Görtz"
 
 
-def markdown(text, style="default"):
+def markdown(text, options={}):
+    import markdown
     if not text:
         return ""
-    import markdown
-    return markdown.markdown()
-
-def get_style(style):
-    from markdown_tag.conf import settings
-    try:
-        return settings.MARKDOWN_DEUX_STYLES[style]
-    except KeyError:
-        return settings.MARKDOWN_DEUX_STYLES.get("default",
-            settings.MARKDOWN_DEUX_DEFAULT_STYLE)
+    local_options = settings.MARKDOWN_OPTIONS_DEFAULT
+    local_options.update(options)
+    return markdown.markdown(text, **local_options)

@@ -1,5 +1,6 @@
 # This is the MIT license
 
+Copyright (c) 2015 Steffen Görtz
 Copyright (c) 2014 Trent Mick.
 Copyright (c) 2010 ActiveState Software Inc.
 
