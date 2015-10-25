@@ -9,7 +9,6 @@ python-markdown library.
 
 See <http://github.com/douzepouze/django-markdown-tag> for more info.
 """
-from markdown_tag.conf import settings
 
 __version_info__ = (1, 0, 0)
 __version__ = '.'.join(map(str, __version_info__))
@@ -17,6 +16,7 @@ __author__ = "Steffen Görtz"
 
 
 def markdown(text, options={}):
+    from markdown_tag.conf import settings
     import markdown
     if not text:
         return ""
